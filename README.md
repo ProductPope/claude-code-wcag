@@ -68,6 +68,16 @@ bash uninstall.sh
 
 ---
 
+## Constitution
+
+This repository includes a `CLAUDE.md` file that defines how Claude Code operates during development.
+It covers component architecture, accessibility constraints, iteration protocol, and code quality defaults.
+
+If you fork this repo, treat `CLAUDE.md` as a starting point — not a final answer.
+Extend it as your project evolves.
+
+---
+
 ## Why prevention beats remediation
 
 The standard AI accessibility workflow looks like this:
