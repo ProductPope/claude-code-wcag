@@ -1,0 +1,5 @@
+# Per-project disable flag — should not be committed to this repo
+.wcag-disabled
+
+# Claude Code local session settings (machine-specific)
+.claude/
