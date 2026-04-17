@@ -116,6 +116,29 @@ These are patterns observed during development — moments where Claude Code tri
 
 ---
 
+## Scope and limitations
+
+This hook is a generative constraint — it shapes what Claude produces. It is not an auditor, a validator, or a replacement for manual testing.
+
+**The hook builds a foundation. It does not close the WCAG process.**
+
+Accessibility work still requires a full pipeline alongside it:
+
+| What the hook does | What still requires human process |
+|---|---|
+| Reminds Claude of contrast ratios during generation | Verifying actual color values against WCAG ratios (Colour Contrast Analyser, browser devtools) |
+| Enforces semantic HTML and ARIA discipline | Automated DOM audit (axe-core, WAVE, Lighthouse) |
+| Requires keyboard navigation patterns | Manual keyboard testing across components |
+| Injects focus management rules | Screen reader testing (NVDA, JAWS, VoiceOver) |
+| Flags prefers-reduced-motion | Testing with motion sensitivity settings enabled |
+| Covers WCAG 2.2 SC 2.4.11, 2.5.7, 2.5.8, 3.3.7, 3.3.8 | 1.2.x captions and audio description, 1.4.10 reflow, 1.4.12 text spacing, 2.2.x timing, 2.3.1 seizures, 3.2.x predictability |
+
+The areas the hook does not reach — time-based media, reflow at 320px, text spacing, seizure thresholds, language of parts, consistent navigation — are not less important. They require different tooling and different testing moments in the development cycle.
+
+What this hook eliminates is the most common failure mode in AI-assisted development: accessibility treated as an afterthought, bolted on after the code already exists. It makes the foundation solid. Everything built on that foundation still needs to be tested.
+
+---
+
 ## File structure
 
 ```
